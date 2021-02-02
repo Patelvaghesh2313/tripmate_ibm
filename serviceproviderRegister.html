@@ -1,0 +1,66 @@
+{% extends 'landing_layout.html' %}
+{% block title %} Service Provider Register {% endblock %}
+{% block pageLink %}Service Provider Register{% endblock %}
+
+{% block mainContent %}
+    <div class="col-md-11">
+				<div class="col-md-5"></div>
+				<h1> <a class="navbar-brand" href="#"><i class="fa fa-black-tie"></i> </a></h1></br>
+
+			</div>
+
+		<div class="login-bottom">
+			<form>
+
+			<div class="col-md-12">
+                <div class="login-mail">
+					<input type="text" placeholder="Shop Name" required="">
+					<i class="fa fa-shopping-bag"></i>
+				</div>
+				<div class="login-mail">
+					<input type="text" placeholder="Email" required="">
+					<i class="fa fa-envelope"></i>
+				</div>
+				<div class="login-mail">
+					<input type="password" placeholder="Password" required="">
+					<i class="fa fa-lock"></i>
+				</div>
+                <div class="col-12 form-group2 group-mail">
+                    <select>
+                        <option value="" selected disabled>Choose Service Type</option>
+                        <option value="">Accessories</option>
+                        <option value="">Towing</option>
+                    </select>
+                </div>
+                <div class="col-12 form-group2 group-mail">
+                    <select id="countrySelect" size="1" onchange="makeSubmenu(this.value)">
+                        <option value="" disabled selected>Choose State</option>
+                        <option>Gujarat</option>
+                        <option>Maharashtra</option>
+                        <option>Rajasthan</option>
+                    </select>
+                </div>
+                <div class="col-12 form-group2 group-mail">
+                    <select id="citySelect" size="1" >
+                        <option value="" disabled selected>Choose City</option>
+                        <option></option>
+                    </select>
+                </div>
+                <div class="login-mail">
+					<input type="text" placeholder="Mobile Number" required="">
+					<i class="fa fa-mobile-phone"></i>
+				</div>
+
+				   <a class="news-letter " href="#">
+				   <label class=" login-do hvr-shutter-in-horizontal login-sub">
+					<input type="submit" value="Register">
+					</label>
+						 <!-- <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label> --!>
+					   </a>
+
+			</div>
+			<div class="clearfix"> </div>
+			</form>
+
+	</div>
+{% endblock %}

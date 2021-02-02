@@ -1,0 +1,48 @@
+{% extends 'landing_layout.html' %}
+{% block title %} Customer Login {% endblock %}
+{% block pageLink %}Customer Login{% endblock %}
+{% block mainContent %}
+    <div class="col-md-11">
+				<div class="col-md-5"></div>
+				<h1> <a class="navbar-brand" href="#"><i class="fa fa-heart"></i> </a></h1></br>
+
+			</div>
+
+		<div class="login-bottom">
+			<form enctype="multipart/form-data" id="register_form" method="POST" action="{{ url_for('customerLogin') }}">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for  category,message in messages %}
+                            <div class="panel-body">
+                                <div class="alert alert-{{ category }} alert-dismissable fade in" role="alert">
+                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                      <strong>{{ message }}</strong>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+			<div class="col-md-12">
+				<div class="login-mail">
+					<input type="text" placeholder="Email" name="email" required="">
+					<i class="fa fa-envelope"></i>
+				</div>
+				<div class="login-mail">
+					<input type="password" placeholder="Password" name="password" required="">
+					<i class="fa fa-lock"></i>
+				</div>
+				   <a class="news-letter " href="#">
+				   <label class=" login-do hvr-shutter-in-horizontal login-sub">
+					<input type="submit" value="login">
+					</label>
+						<!-- <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label> --!>
+
+					   </a>
+					<label class="text">? New User <a class="" href="{{ url_for('customerRegister') }}">Register Here</a></label>
+
+			</div>
+			<div class="clearfix"> </div>
+			</form>
+        </div>
+{% endblock %}

@@ -1,29 +1,33 @@
 
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
 <head>
-<title>{% block title %}{% endblock %}</title>
+<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Blank :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel='stylesheet' type='text/css' />
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
-<link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename='images/trip.svg') }}">
-<link href="{{ url_for('static',filename='css/style.css') }}" rel='stylesheet' type='text/css' />
-<link href="{{ url_for('static',filename='css/style1.css') }}" rel='stylesheet' type='text/css' />
-<link href="{{ url_for('static',filename='css/font-awesome.css') }}" rel="stylesheet">
-<script src="{{ url_for('static',filename='js/jquery.min.js') }}"> </script>
-<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"> </script>
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<script src="js/jquery.min.js"> </script>
+<script src="js/bootstrap.min.js"> </script>
   
 <!-- Mainly scripts -->
-<script src="{{ url_for('static',filename='js/jquery.metisMenu.js') }}"></script>
-<script src="{{ url_for('static',filename='js/jquery.slimscroll.min.js') }}"></script>
+<script src="js/jquery.metisMenu.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
 <!-- Custom and plugin javascript -->
-<link href="{{ url_for('static',filename='css/custom.css') }}" rel="stylesheet">
-<script src="{{ url_for('static',filename='js/custom.js') }}"></script>
-<script src="{{ url_for('static',filename='js/screenfull.js') }}"></script>
+<link href="css/custom.css" rel="stylesheet">
+<script src="js/custom.js"></script>
+<script src="js/screenfull.js"></script>
 		<script>
 		$(function () {
 			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
@@ -42,32 +46,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 		});
 		</script>
-<script type="text/javascript">
-var citiesByState = {
-Gujarat: ["Ahemdabad","Surat","Mehsana"],
-Maharashtra: ["Mumbai","Pune","Nagpur"],
-Rajasthan: ["Jaipur","Alwar","Udaipur"],
-}
-function makeSubmenu(value) {
-if(value.length==0) document.getElementById("citySelect").innerHTML = "<option></option>";
-else {
-var citiesOptions = "";
-for(cityId in citiesByState[value]) {
-citiesOptions+="<option>"+citiesByState[value][cityId]+"</option>";
-}
-document.getElementById("citySelect").innerHTML = citiesOptions;
-}
-}
 
-function resetSelection() {
-document.getElementById("countrySelect").selectedIndex = 0;
-document.getElementById("citySelect").selectedIndex = 0;
-}
-</script>
 
 
 </head>
-<body onload="resetSelection()">
+<body>
 <div id="wrapper">
        <!----->
         <nav class="navbar-default navbar-static-top" role="navigation">
@@ -78,7 +61,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <h1> <a class="navbar-brand" href="{{ url_for('index') }}"><i class="fa fa-car"></i> Tripmate</a></h1>
+               <h1> <a class="navbar-brand" href="index.html"><i class="fa fa-car"></i> Tripmate</a></h1>         
 			   </div>
 			 <div class=" border-bottom">
         	<div class="full-left">
@@ -106,15 +89,15 @@ document.getElementById("citySelect").selectedIndex = 0;
                 <ul class="nav" id="side-menu">
 				
                     <li>
-                        <a href="{{ url_for('index') }}" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Dashboard</span> </a>
+                        <a href="index.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Dashboard</span> </a>
                     </li>
                    
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-eye nav_icon"></i> <span class="nav-label">Login</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="{{ url_for('customerLogin') }}" class=" hvr-bounce-to-right"> <i class="fa fa-heart nav_icon"></i>As Customer</a></li>
+                            <li><a href="graphs.html" class=" hvr-bounce-to-right"> <i class="fa fa-heart nav_icon"></i>As Customer</a></li>
                             
-                            <li><a href="{{ url_for('serviceproviderLogin') }}" class=" hvr-bounce-to-right"><i class="	fa fa-black-tie nav_icon"></i>As Service Provider</a></li>
+                            <li><a href="maps.html" class=" hvr-bounce-to-right"><i class="	fa fa-black-tie nav_icon"></i>As Service Provider</a></li>
 					   </ul>
                     </li>
 					 
@@ -128,27 +111,36 @@ document.getElementById("citySelect").selectedIndex = 0;
  	<!--banner-->	
 		     <div class="banner">
 		    	<h2>
-				<a href="{{ url_for('index') }}">Home</a>
+				<a href="index.html">Home</a>
 				<i class="fa fa-angle-right"></i>
-				<span>{% block pageLink %}{%  endblock %}</span>
+				<span>Blank</span>
 				</h2>
 		    </div>
 		<!--//banner-->
  	 <!--faq-->
  	<div class="blank">
-        {% block mainContent %}{% endblock %}
-    </div>
+	
+
+			<div class="blank-page">
+				
+	        	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+	        		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+	        </div>
+	       </div>
+	
 	<!--//faq-->
 		<!---->
-
+<div class="copy">
+            <p> &copy; 2016 Minimal. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>	    </div>
 		</div>
-
+		</div>
+		<div class="clearfix"> </div>
        </div>
      
 <!---->
 <!--scrolling js-->
-	<script src="{{ url_for('static',filename='js/jquery.nicescroll.js') }}"></script>
-	<script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
 	<!--//scrolling js-->
 </body>
 </html>
