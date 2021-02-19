@@ -1,0 +1,30 @@
+
+{% extends 'landing_layout.html' %}
+{% block landingTitle %} Tripmate {% endblock %}
+
+
+        {% block mainContentLandingPage %}
+		<div class="login-bottom">
+			<div class="col-md-6 login-do">
+                <label class="hvr-shutter-in-horizontal">
+                    <a href="{{ url_for('customerLogin') }}"><input type="submit"  value="For Customer"></a>
+					</label>
+			</div>
+			<div class="col-md-6 login-do">
+				<label class="hvr-shutter-in-horizontal login-sub">
+                    <a href="{{ url_for('serviceproviderLogin') }}"><input type="submit" value="For Service Provider"></a>
+					</label>
+			</div>
+
+			<div class="clearfix"> </div>
+			</form>
+		</div>
+        {% endblock %}
+	</div>
+		<!---->
+<div class="copy-right">
+            <p> &copy; 2016 Tripmate. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">Tripmate</a> </p>
+</div>
+<!---->
+
+

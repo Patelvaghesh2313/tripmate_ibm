@@ -1,0 +1,26 @@
+{% extends 'landing_layout.html' %}
+{% block landingTitle %} Service Provider Login {% endblock %}
+{% block mainContentLandingPage %}
+<div class="login-bottom">
+            <a href="{{ url_for('index') }}"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
+			<h2 class="text-center">Login</h2>
+			<form enctype="multipart/form-data" id="register_form" method="POST" action="{{ url_for('serviceproviderLogin') }}">
+			<div class="col-md-12 login-do">
+				<div class="login-mail">
+					<input type="text" name="email" placeholder="Email" required="">
+					<i class="fa fa-envelope"></i>
+				</div>
+				<div class="login-mail">
+					<input type="password" name="password" placeholder="Password" required="">
+					<i class="fa fa-lock"></i>
+				</div>
+
+                <label class="hvr-shutter-in-horizontal login-sub">
+					<input type="submit" value="login">
+					</label>
+			</div>
+			<div class="clearfix"> </div>
+			</form>
+            <p style="margin: 2px;margin-left: 15px;" class="w3-text">Don't have an account?<a href="{{ url_for('serviceproviderRegister') }}">SignUp</a></p>
+		</div>
+{% endblock %}

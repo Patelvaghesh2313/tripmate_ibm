@@ -1,0 +1,47 @@
+{% extends 'landing_layout.html' %}
+{% block landingTitle %} Customer Signup {% endblock %}
+{% block mainContentLandingPage %}
+<div class="login-bottom">
+            <a href="{{ url_for('index') }}"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
+			<h2 class="text-center">Signup</h2>
+			<form enctype="multipart/form-data" id="register_form" method="POST" action="{{ url_for('customerRegister') }}">
+
+			<div class="col-md-12">
+
+                <div class="col-sm-6 login-mail">
+					<input type="text" placeholder="First Name" name="customer_fname" required="">
+				</div>
+                <div class="col-sm-offset-6 login-mail">
+					<input type="text" placeholder="Last Name" name="customer_lname" required="">
+				</div>
+				<div class="login-mail">
+					<input type="text" placeholder="Email" name="customer_email" required="">
+					<i class="fa fa-envelope"></i>
+				</div>
+                <div class="login-mail">
+					<input type="text" placeholder="Mobile Number" title="Please Enter Valid Number or Starting number must be 7,8, or 9. " name="customer_mobilenumber" required="">
+					<i class="fa fa-mobile-phone"></i>
+				</div>
+                <div class="login-mail">
+					<input type="password" placeholder="Password" name="customer_password" required="">
+					<i class="fa fa-lock"></i>
+				</div>
+                <div class="login-mail">
+					<input type="password" placeholder="Confirm Password" name="confirm_password" required="">
+					<i class="fa fa-lock"></i>
+				</div>
+				   <a class="news-letter " href="#">
+				   <label class=" login-do hvr-shutter-in-horizontal login-sub">
+					<input type="submit" value="Register">
+					</label>
+						<!-- <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label> !-->
+					   </a>
+
+			    </div>
+			    <div class="clearfix"> </div>
+			    </form>
+
+
+            <p style="margin: 2px;margin-left: 15px;" class="w3-text">Don't have an account?<a href="{{ url_for('customerRegister') }}">SignUp</a></p>
+		</div>
+{% endblock %}

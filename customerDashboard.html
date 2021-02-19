@@ -1,0 +1,54 @@
+{% extends 'user_layout.html' %}
+{% block customerTitle %} Dashboard {% endblock %}
+{% block mainContentCustomer %}
+<div class="blank-page">
+
+
+
+<!-------------- start content_slider ------------------------------------------------------------------------------------->
+		<center><h1>About Us </h1></center>
+		<p>Our goal is to help Society to providing digital platform for automobiles services in easy and efficient way.
+			Driver will see all nearby service provider on map and our platform.
+			we will be trying to fill gap between Driver and Service Provider.
+		</p>
+	    <p>Driver and Service provider can Synchronize smoothly.
+			We provide secure, efficient, and trusted roadside service assistance.
+			Driver can see the nearby service providers and which services they provides.
+		</p>
+
+
+		<br/>
+		<br/>
+		<center><h1>Services</h1></center><br/>
+		<div id="owl-demo" class="owl-carousel text-center">
+			<div class="item">
+				<img class="lazyOwl img-responsive" data-src="{{ url_for('static',filename='images/car1.jpg') }}" alt="name">
+			</div>
+			<div class="item">
+				<img class="lazyOwl img-responsive" data-src="{{ url_for('static',filename='images/car2.jpg') }}" alt="name">
+			</div>
+			<div class="item">
+				<img class="lazyOwl img-responsive" data-src="{{ url_for('static',filename='images/car3.jpg') }}" alt="name">
+			</div>
+			<div class="item">
+				<img class="lazyOwl img-responsive" data-src="{{ url_for('static',filename='images/car4.jpg') }}" alt="name">
+			</div>
+			<div class="item">
+				<img class="lazyOwl img-responsive" data-src="{{ url_for('static',filename='images/car5.jpg') }}" alt="name">
+			</div>
+			<div class="item">
+				<img class="lazyOwl img-responsive" data-src="{{ url_for('static',filename='images/car6.jpg') }}" alt="name">
+			</div>
+			<div class="item">
+				<img class="lazyOwl img-responsive" data-src="{{ url_for('static',filename='images/car7.jpg') }}" alt="name">
+			</div>
+
+		</div>
+		</div>
+
+{% endblock %}
+<!--//sreen-gallery-cursual---->
+		<!-- requried-jsfiles-for owl -->
+
+		<!-- //requried-jsfiles-for owl -->
+<!-------------- End content_slider ------------------------------------------------------------------------------------->

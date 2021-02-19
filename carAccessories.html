@@ -1,0 +1,32 @@
+{% extends 'user_layout.html' %}
+{% block customerTitle %} Car Accessories {% endblock %}
+{% block mainContentCustomer %}
+    <div class="content-mid">
+
+			<div class="col-md-5">
+                <div class="blank-page">
+                    <div class="gallery-img">
+                    <a href="#nextDescription" class="b-link-stripe b-animate-go  swipebox"  title="Load More" >
+                      <img height="260" width="387" src="{{ url_for('static',filename='images/car3.jpg') }}" alt="name">
+                        <span class="zoom-icon"> </span> </a>
+                    </a>
+                    </div>
+                </div>
+			<!----End Calender -------->
+			</div>
+			<div class="col-md-7 mid-content-top">
+				<div class="middle-content">
+					<h3>Car Accessories</h3>
+					<!-- start content_slider -->
+                    <p>Some of the following accessories are for city riders while some are for road trip enthusiasts.
+					Nevertheless, these accessories are functional and designed to add value to every car.</p>
+					<br>
+					<p>Some Useful Car Accessories:</p>
+					<p>1) Neck & Back Rest</p>
+					<p>2) Universal Charger</p>
+
+				</div>
+            </div>
+    <div class="clearfix"></div>
+</div>
+{% endblock %}
