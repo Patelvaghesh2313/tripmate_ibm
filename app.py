@@ -56,7 +56,7 @@ def index():
     return render_template('landingDashboard.html')
 
 
-#--#---------Start Of Register and Login Modules--------##
+##---------Start Of Register and Login Modules--------##
 def customerData():
     customers_data = db.child('customers').child('profiles').get().val()
     temp_list = []
@@ -288,7 +288,7 @@ def serviceProvidersLocation():
             streetName = db.child('service_providers').child('shopsDetails').child(i).child('StreetName').get().val()
             shopCity = db.child('service_providers').child('shopsDetails').child(i).child('City').get().val()
             shopState = db.child('service_providers').child('shopsDetails').child(i).child('State').get().val()
-            shopFullAddress = str(shopNumber) + str(shopName) + str(streetName) + str(shopCity) + str(shopState)
+            shopFullAddress = str(shopNumber) + str(streetName) + str(shopCity) + str(shopState)
 
             parameters = {
                 "key": "lks2Rcp9AgsAIvmvVAkpFf5t73ruurvy",
@@ -302,7 +302,23 @@ def serviceProvidersLocation():
             print(lat, lng)
 
 
-
+@app.route('/dashboard/profile', methods=['GET'])
+def profile():
+    if g.user:
+        temp = customerData()
+        for i in temp:
+            c_email = db.child('customers').child('profiles').child(i).child('Email').get().val()
+            if c_email == session['user']:
+                c_fname = db.child('customers').child('profiles').child(i).child('FirstName').get().val()
+                c_lname = db.child('customers').child('profiles').child(i).child('LastName').get().val()
+                c_mobile = db.child('customers').child('profiles').child(i).child('MobileNumber').get().val()
+                c_data = {
+                    "fname": c_fname,
+                    "lname": c_lname,
+                    "mobile": c_mobile
+                }
+        return render_template('profile.html', data=c_data)
+    return render_template('404.html')
 #--------------End Of Customer Module---------------#
 
 #-------------Logout Module--------------------
