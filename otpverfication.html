@@ -1,0 +1,34 @@
+{% extends 'landing_layout.html' %}
+{% block landingTitle %} OTP Verfication {% endblock %}
+{%  block mainContentLandingPage %}
+<div class="login-bottom">
+            <a href="{{ url_for('index') }}"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
+			<h2 class="text-center">OTP Verfication</h2>
+			<form enctype="multipart/form-data" id="register_form" method="POST" action="{{ url_for('otpverification') }}">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category,message in messages %}
+                            <div class="panel-body">
+                                <div class="alert alert-{{ category }} alert-dismissable fade in" role="alert">
+                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                      <strong>{{ message }}</strong>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+            <div class="col-md-12 login-do">
+				<div class="login-mail">
+					<input type="text" name="user_otp" placeholder="One Time Password" required="">
+					<i class="fa fa-envelope"></i>
+				</div>
+                <label class="hvr-shutter-in-horizontal login-sub">
+					<input type="submit" value="Verfiy">
+					</label>
+			</div>
+			<div class="clearfix"> </div>
+			</form>
+		</div>
+{% endblock %}

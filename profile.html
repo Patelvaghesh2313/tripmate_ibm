@@ -1,0 +1,137 @@
+{% extends 'user_layout.html' %}
+{% block customerTitle %} Profile {% endblock %}
+{% block pagename %} Profile {% endblock %}
+{% block mainContentCustomer %}
+
+    <div class="profile-bottom">
+
+			<h3><i class="fa fa-user"></i>Profile</h3>
+			<div class="profile-bottom-top">
+			<div class="col-md-4 profile-bottom-img">
+				<img src="images/pr.jpg" alt="">
+			</div>
+			<div class="col-md-8 profile-text">
+				<h6>{{ data.fname }} {{ data.lname }}</h6>
+				<table>
+				<tr><td>Role</td>
+				<td>:</td>
+				<td>Customer</td></tr>
+
+				<tr>
+				<td>Email</td>
+				<td> :</td>
+				<td><a href="mailto: {{ session['user'] }}">{{ session['user'] }}</a></td>
+				</tr>
+				<tr>
+				<td>Mobile</td>
+				<td> :</td>
+				<td>{{ data.mobile }}</td>
+				</tr>
+				</table>
+			</div>
+
+			<div class="clearfix"></div>
+			</div>
+			<div class="profile-bottom-bottom">
+			<div class="col-md-4 profile-fo">
+
+				<a href="#" class="pro"><i class="fa fa-plus-circle"></i>History</a>
+			</div>
+			<div class="col-md-4 profile-fo">
+
+				<a href="#" data-toggle="modal" data-target="#myModalEditProfile" class="pro1"><i class="fa fa-user"></i>Edit Profile</a>
+			</div>
+
+			<!-- Popup Model For Edit Profile !-->
+			<div class="modal fade" id="myModalEditProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h2 class="modal-title">Edit Profile</h2>
+							</div>
+							<div class="modal-body">
+								<form enctype="multipart/form-data" id="register_form" method="POST" action="{{ url_for('profile') }}">
+
+									<div class="col-md-12">
+										<div class="col-sm-6 login-mail">
+											<input type="text" placeholder="{{ data.fname }}" name="customer_fname" required="">
+										</div>
+										<div class="col-sm-offset-6 login-mail">
+											<input type="text" placeholder="{{ data.lname }}" name="customer_lname" required="">
+										</div>
+										<div class="login-mail">
+											<input type="text" placeholder="{{ session['user'] }}" required="">
+											<i class="fa fa-envelope"></i>
+										</div>
+										 <div class="login-mail">
+											<input type="text" placeholder="{{ data.mobile }}" title="Please Enter Valid Number or Starting number must be 7,8, or 9. " name="customer_mobilenumber" required="">
+											<i class="fa fa-mobile-phone"></i>
+										</div>
+										<div class="login-mail">
+											    <label for="exampleInputFile">Profile Image (Optional)</label>
+												<input type="file" id="exampleInputFile">
+										</div>
+									</div>
+									<div class="clearfix"> </div>
+									</form>
+                            </div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div>
+				<!-- End Popup Model !-->
+
+
+
+
+
+			<div class="col-md-4 profile-fo">
+
+				<a href="#" data-toggle="modal" data-target="#myModalChangePassword"><i class="fa fa-cog"></i>Change Password</a>
+			</div>
+
+                <!-- Popup Model For Change Password !-->
+			<div class="modal fade" id="myModalChangePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h2 class="modal-title">Change Password</h2>
+							</div>
+							<div class="modal-body">
+								<form enctype="multipart/form-data" id="register_form" method="POST" action="{{ url_for('profile') }}">
+
+									<div class="col-md-12">
+										<div class="login-mail">
+											<input type="password" placeholder="Current Password" required="">
+											<i class="fa fa-lock"></i>
+										</div>
+										<div class="login-mail">
+											<input type="password" placeholder="New Password" required="">
+											<i class="fa fa-lock"></i>
+										</div>
+										<div class="login-mail">
+											<input type="password" placeholder="Confirm Password" required="">
+											<i class="fa fa-lock"></i>
+										</div>
+									</div>
+									<div class="clearfix"> </div>
+									</form>
+                            </div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div>
+				<!-- End Popup Model !-->
+			<div class="clearfix"></div>
+			</div>
+
+		</div>
+{% endblock %}
