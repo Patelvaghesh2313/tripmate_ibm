@@ -1,17 +1,15 @@
 # tripmate_ibm
 IBM Project semester 8
 
-->Note: for design the pages of landing pages, please use "landing_layout.html".
+----------------------------------------
+**Notes**
+----------------------------------------
+1. for design the pages of landing pages, please use "landing_layout.html".
+2. To run the application use app.py
+3. for design the customer pages use "user_layout.html"
+4. In the **static** folder put your all static files ( ex. css,js etc)
+5. in the **templates** folder put your all html files
 
-->Step 1:
-  Setup Flask Enviornment in your IDE.
-  ex.
-    static:(folder)
-      css,js,images,fonts,etc.
-    templates:(folder)
-      all html files.
-      
-      
 ------------------------------------------
 DEPLOY APP ON HEROKU 
 ------------------------------------------
